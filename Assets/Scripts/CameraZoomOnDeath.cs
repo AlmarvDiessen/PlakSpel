@@ -10,9 +10,16 @@ public class CameraZoomOnDeath : MonoBehaviour
     private void Start()
     {
         CMcam = CMcamObject.GetComponent<CinemachineFreeLook>();
+        StartCoroutine(Wait());
     }
 
-    public IEnumerator ZoomCamera(float zoomSpeed, float duration)
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+        StartCoroutine(ZoomCamera(10f, 1f, 5f));
+    }
+
+    public IEnumerator ZoomCamera(float zoomSpeed, float duration, float lookAroundTime)
     {
         float timeElapsed = 0;
 
@@ -27,7 +34,7 @@ public class CameraZoomOnDeath : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(MoveCamera(10));
+        StartCoroutine(MoveCamera(lookAroundTime));
     }
 
     IEnumerator MoveCamera(float waitTime)
