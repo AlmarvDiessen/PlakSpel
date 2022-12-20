@@ -1,5 +1,7 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -7,6 +9,7 @@ public class KYS : MonoBehaviour {
     private GameObject player;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject spawnpoint;
+    [SerializeField] private Camera cam;
 
     [SerializeField] private List<GameObject> bodies = new List<GameObject>();
 
@@ -23,7 +26,8 @@ public class KYS : MonoBehaviour {
             bodies.RemoveAt(0);
         }
         player.GetComponent<Player>().enabled = false;
-        //player.GetComponent<Rigidbody>().enabled = false; //freezen van positie
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<PlayerCamera>().enabled = false;
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
     }
 }
