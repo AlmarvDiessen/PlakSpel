@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 namespace Assets.Scripts
 {
     // public first person player camera
-
+   
 }
