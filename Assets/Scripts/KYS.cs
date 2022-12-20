@@ -8,30 +8,22 @@ public class KYS : MonoBehaviour {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject spawnpoint;
 
-
-    private GameObject body1 = null;
-    private GameObject body2 = null;
-    private GameObject body3 = null;
-
+    [SerializeField] private List<GameObject> bodies = new List<GameObject>();
 
     private void Start() {
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
     }
 
+    public void Reset() {
 
+        bodies.Add(player);
 
-    private void Reset() {
-
-
-
-        body1 = player.gameObject;
-        if (body1 != null && body2 != null) {
-            body3 = player.gameObject;
+        if (bodies.Count > 3) {
+            Destroy(bodies[0]);
+            bodies.RemoveAt(0);
         }
-        if (body1 != null) {
-            body2 = player.gameObject;
-        }
-        Destroy(player);
-        Instantiate(playerPrefab);
+        player.GetComponent<Player>().enabled = false;
+        //player.GetComponent<Rigidbody>().enabled = false; //freezen van positie
+        player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
     }
 }

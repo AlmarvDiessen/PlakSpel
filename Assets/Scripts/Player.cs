@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+   private GameObject gameManager;
+    KYS kys;
+
+    private void Start() {
+        gameManager = GameObject.Find("GameManager");
+        kys = gameManager.GetComponent<KYS>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        PlaceBody();
+    }
+
+    private void PlaceBody() {
+
+        if (Input.GetKeyUp(KeyCode.F)) {
+            kys.Reset();
+        }
     }
 }
