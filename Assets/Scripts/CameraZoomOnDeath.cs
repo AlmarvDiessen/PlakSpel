@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -11,13 +10,6 @@ public class CameraZoomOnDeath : MonoBehaviour
     private void Start()
     {
         CMcam = CMcamObject.GetComponent<CinemachineFreeLook>();
-        StartCoroutine(Wait());
-    }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(ZoomCamera(10, 1));
     }
 
     public IEnumerator ZoomCamera(float zoomSpeed, float duration)
