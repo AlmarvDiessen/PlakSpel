@@ -9,10 +9,12 @@ public class Fan : MonoBehaviour
     GameObject fanBlades;
     float rotationSpeed = 500f;
     bool fanStuck = false;
-    
+    KYS _kys;
+
     // Awake is called before the Start method is called
     void Awake()
     {
+        _kys = FindObjectOfType<KYS>();
         fanBlades = GameObject.FindGameObjectWithTag("FanBlades");
     }
 
@@ -23,5 +25,14 @@ public class Fan : MonoBehaviour
             fanBlades.transform.Rotate((rotationSpeed * Time.deltaTime), 0, 0);
         else
             return;
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag != "Player" || fanStuck == true)
+            return;
+        else
+            fanStuck = true;
+            _kys.Reset();
     }
 }
