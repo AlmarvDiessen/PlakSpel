@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3229206934860788663, guid: ce46986b75f2c054d88a3643bc4d7cd9, type: 3}
   spawnpoint: {fileID: 2084016165}
+  bodies: []
 --- !u!4 &297039715
 Transform:
   m_ObjectHideFlags: 0
