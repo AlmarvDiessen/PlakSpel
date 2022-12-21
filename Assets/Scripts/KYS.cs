@@ -30,6 +30,8 @@ public class KYS : MonoBehaviour {
         player.GetComponent<Player>().enabled = false;
         player.GetComponent<Rigidbody>().isKinematic = true;
         player.GetComponent<PlayerCamera>().enabled = false;
+        var cam = GameObject.Find("Main Camera");
+        cam.gameObject.SetActive(false);
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
     }
 }
