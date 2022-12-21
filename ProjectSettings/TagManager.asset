@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - FanBlades
+  - Corpse
+  - Goal
   layers:
   - Default
   - TransparentFX
