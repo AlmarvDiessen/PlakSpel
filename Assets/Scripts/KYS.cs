@@ -9,7 +9,6 @@ public class KYS : MonoBehaviour {
     private GameObject player;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject spawnpoint;
-    [SerializeField] private Camera cam;
 
     [SerializeField] private List<GameObject> bodies = new List<GameObject>();
 

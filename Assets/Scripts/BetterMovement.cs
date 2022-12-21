@@ -58,5 +58,11 @@ namespace Assets.Scripts {
                 grounded = false;
             }
         }
+
+        private void OnCollisionStay(Collision collision) {
+            if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Corpse")) {
+                grounded = true;
+            }
+        }
     }
 }
