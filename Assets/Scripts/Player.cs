@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private void PlaceBody() {
 
         if (Input.GetKeyUp(KeyCode.F)) {
+            gameObject.tag = "Corpse";
             kys.Reset();
         }
     }

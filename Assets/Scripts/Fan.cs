@@ -6,7 +6,6 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
 
-    GameObject fanBlades;
     float rotationSpeed = 500f;
     bool fanStuck = false;
     KYS _kys;
@@ -15,14 +14,14 @@ public class Fan : MonoBehaviour
     void Awake()
     {
         _kys = FindObjectOfType<KYS>();
-        fanBlades = GameObject.FindGameObjectWithTag("FanBlades");
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!fanStuck)
-            fanBlades.transform.Rotate((rotationSpeed * Time.deltaTime), 0, 0);
+            transform.Rotate((rotationSpeed * Time.deltaTime), 0, 0);
         else
             return;
     }
@@ -34,5 +33,12 @@ public class Fan : MonoBehaviour
         else
             fanStuck = true;
             _kys.Reset();
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if(fanStuck == true && collider.tag == "Corpse")
+            fanStuck = false;
+        
     }
 }

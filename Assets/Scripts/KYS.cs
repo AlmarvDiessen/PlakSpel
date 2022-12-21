@@ -19,6 +19,7 @@ public class KYS : MonoBehaviour {
 
     public void Reset() {
 
+        
         bodies.Add(player);
 
         if (bodies.Count > 3) {
