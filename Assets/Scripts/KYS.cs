@@ -18,12 +18,15 @@ public class KYS : MonoBehaviour {
     }
 
     public void Reset() {
-
         bodies.Add(player);
 
         if (bodies.Count > 3) {
             Destroy(bodies[0]);
             bodies.RemoveAt(0);
+        }
+
+        foreach(GameObject body in bodies) {
+            body.tag = "Corpse";
         }
         player.GetComponent<Player>().enabled = false;
         player.GetComponent<Rigidbody>().isKinematic = true;

@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3229206934860788663, guid: ce46986b75f2c054d88a3643bc4d7cd9, type: 3}
   spawnpoint: {fileID: 2084016165}
+  cam: {fileID: 0}
   bodies: []
 --- !u!4 &297039715
 Transform:
@@ -440,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 1795294773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
