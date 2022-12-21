@@ -15,6 +15,7 @@ namespace Assets.Scripts
         // get player gameobject
         public GameObject player;
         // get the mouse sensitivity
+        [SerializeField, Range(0.1f, 1000f)]
         public float mouseSensitivity = 100f;
         // get the x rotation
         float xRotation = 0f;
