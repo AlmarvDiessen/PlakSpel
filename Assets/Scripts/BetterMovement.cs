@@ -47,14 +47,14 @@ namespace Assets.Scripts {
 
         }
         private void OnCollisionEnter(Collision collision) {
-            if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Player")) {
+            if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Corpse")) {
                 grounded = true;
             }
         }
 
 
         private void OnCollisionExit(Collision collision) {
-            if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Player")) {
+            if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Corpse")) {
                 grounded = false;
             }
         }
