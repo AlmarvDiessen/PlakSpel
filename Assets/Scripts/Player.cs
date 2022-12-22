@@ -12,14 +12,11 @@ public class Player : MonoBehaviour
         kys = gameManager.GetComponent<KYS>();
     }
 
-
-
     private void Update() {
-        Test();
+        PlaceBody();
     }
 
-
-    private void Test() {
+    private void PlaceBody() {
 
         if (Input.GetKeyUp(KeyCode.F)) {
             kys.Reset();
