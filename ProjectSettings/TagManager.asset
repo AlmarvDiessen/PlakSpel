@@ -8,6 +8,8 @@ TagManager:
   - FanBlades
   - Corpse
   - Goal
+  - EndBox
+  - EndText
   layers:
   - Default
   - TransparentFX

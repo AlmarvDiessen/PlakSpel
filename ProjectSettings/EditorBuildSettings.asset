@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TychoKamer.unity
+    guid: 6a0e3b6ae011d9549b89457d026afd70
   m_configObjects: {}

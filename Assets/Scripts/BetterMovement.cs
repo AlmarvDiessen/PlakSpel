@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts {
     public class BetterMovement : MonoBehaviour {
@@ -13,11 +14,13 @@ namespace Assets.Scripts {
         public bool grounded;
         Rigidbody rb;
         Vector3 PlayerMovementInput;
+        private KYS kysScript;
 
         private float fallMultiplier = 2.5f;
         private float lowJumpMuliplier = 2f;
         private void Start() {
             rb = GetComponent<Rigidbody>();
+            kysScript = GameObject.Find("GameManager").GetComponent<KYS>();
         }
 
         private void Update() {
@@ -49,6 +52,11 @@ namespace Assets.Scripts {
         private void OnCollisionEnter(Collision collision) {
             if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Corpse")) {
                 grounded = true;
+            }
+
+            if (collision.gameObject.CompareTag("EndBox"))
+            {
+                kysScript.goal = true;
             }
         }
 

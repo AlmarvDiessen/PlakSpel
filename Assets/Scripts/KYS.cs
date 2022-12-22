@@ -9,11 +9,16 @@ public class KYS : MonoBehaviour {
     private GameObject player;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject spawnpoint;
+    public GameObject endText;
+
+    public bool goal;
 
     [SerializeField] private List<GameObject> bodies = new List<GameObject>();
 
     private void Start() {
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
+        endText = GameObject.FindGameObjectWithTag("EndText");
+        endText.SetActive(false);  
     }
 
     public void Reset() {
@@ -33,5 +38,14 @@ public class KYS : MonoBehaviour {
         var cam = GameObject.Find("Main Camera");
         cam.gameObject.SetActive(false);
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
+    }
+
+    private void Update()
+    {
+     if(goal == true)
+        {
+           endText.SetActive(true);
+            Time.timeScale = 0;
+        }       
     }
 }
