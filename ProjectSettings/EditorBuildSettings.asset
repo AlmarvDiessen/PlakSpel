@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/AlmarScene.unity
-    guid: 7366e41117666654d81d0e3832d353a2
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 0db88a8bd6b2ba54aaa679c178b03ff9
+  m_Scenes: []
   m_configObjects: {}

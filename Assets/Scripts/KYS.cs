@@ -11,7 +11,6 @@ public class KYS : MonoBehaviour {
     [SerializeField] private GameObject spawnpoint;
 
     [SerializeField] private List<GameObject> bodies = new List<GameObject>();
-    public bool isCoco;
 
     private void Start() {
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
@@ -26,9 +25,7 @@ public class KYS : MonoBehaviour {
         }
 
         foreach(GameObject body in bodies) {
-            if (bodies.Count != 0) {
-                body.tag = "Corpse";
-            }
+            body.tag = "Corpse";
         }
         player.GetComponent<Player>().enabled = false;
         player.GetComponent<Rigidbody>().isKinematic = true;
@@ -37,13 +34,4 @@ public class KYS : MonoBehaviour {
         cam.gameObject.SetActive(false);
         player = Instantiate(playerPrefab, spawnpoint.transform.position, transform.rotation);
     }
-
-
-    public void Update() {
-        if(isCoco == true) {
-            
-
-        }
-    }
-
 }
