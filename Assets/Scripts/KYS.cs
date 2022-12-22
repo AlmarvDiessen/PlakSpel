@@ -26,7 +26,9 @@ public class KYS : MonoBehaviour {
         }
 
         foreach(GameObject body in bodies) {
-            body.tag = "Corpse";
+            if (bodies.Count != 0) {
+                body.tag = "Corpse";
+            }
         }
         player.GetComponent<Player>().enabled = false;
         player.GetComponent<Rigidbody>().isKinematic = true;

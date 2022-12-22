@@ -14,18 +14,18 @@ namespace Assets.Scripts {
         public bool grounded;
         Rigidbody rb;
         Vector3 PlayerMovementInput;
-        private KYS kysScript;
+        [SerializeField] private KYS kysScript;
 
         private float fallMultiplier = 2.5f;
         private float lowJumpMuliplier = 2f;
         private void Start() {
             rb = GetComponent<Rigidbody>();
-            kysScript = GameObject.Find("GameManegar").GetComponent<KYS>();
+            kysScript = GameObject.Find("GameManager").GetComponent<KYS>();
         }
 
         private void Update() {
             Movement();
-            Jumping();  
+            Jumping();
         }
 
 
